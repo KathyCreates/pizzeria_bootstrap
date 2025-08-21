@@ -1,30 +1,26 @@
-:root {
-  --color-black: #000000;
-  --color-primary: #34547a;
-  --color-secondary: #727272;
-  --color-light: #eeeff1;
-  --color-white: #ffffff;
+// SCSS variables
+$color-secondary: #727272;
+$color-light: #eeeff1;
+$color-white: #ffffff;
 
-  --font-size: 16px;
-  --font-primary: 'Roboto', sans-serif;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
+$font-size: 16px;
+$font-primary: 'Roboto', sans-serif;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
 
-  --letter-spacing: 0.1em;
-  --line-height-sm: 1.2;
-  --line-height: 1.64;
+$letter-spacing: 0.1em;
+$line-height-sm: 1.2;
+$line-height: 1.64;
 
-  --container-primary: 1110px;
-  --container-sm: 540px;
-  --gap: 20px;
-  /* 20px */
-  --gap-sm: calc(var(--gap) / 2);
-  /* 10px */
-  --gap-md: calc(var(--gap) * 1.5);
-  /* 30px */
-  --gap-lg: calc(var(--gap) * 2);
-  /* 40px */
-}
+$container-primary: 1110px;
+$container-sm: 540px;
+$gap: 20px;
+$gap-sm: calc(#{$gap} / 2);
+$gap-md: calc(#{$gap} * 1.5);
+$gap-lg: calc(#{$gap} * 2);
+
+$color-black: #000000;
+$color-primary: #34547a;
 
 * {
   box-sizing: border-box;
@@ -34,36 +30,36 @@
 }
 
 html {
-  font-size: var(--font-size);
-  font-family: var(--font-primary);
-  line-height: var(--line-height);
-  font-weight: var(--font-weight-normal);
+  font-size: $font-size;
+  font-family: $font-primary;
+  line-height: $line-height;
+  font-weight: $font-weight-normal;
 }
 
 h1 {
   font-size: 3rem;
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-sm);
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
 }
 
 h2 {
   font-size: 2rem;
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-sm);
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
 }
 
 a {
   text-decoration: none;
-  color: var(--color-black);
+  color: $color-black;
 }
 
 .container {
-  width: min(100% - var(--gap-lg), var(--container-primary));
+  width: min(100% - $gap-lg, $container-primary);
   margin-inline: auto;
 }
 
 .container-sm {
-  width: min(100% - var(--gap-lg), var(--container-sm));
+  width: min(100% - $gap-lg, $container-sm);
   margin-inline: auto;
 }
 
@@ -85,7 +81,7 @@ a {
 .header {
   padding-top: 67px;
   padding-bottom: 141px;
-  background-color: var(--color-light);
+  background-color: $color-light;
 }
 
 .navbar {
@@ -95,21 +91,21 @@ a {
 .navbar__list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-sm) var(--gap-md);
-  margin-left: calc(var(--gap-sm) * -1);
+  gap: $gap-sm $gap-md;
+  margin-left: calc(#{$gap-sm} * -1);
 }
 
 .navbar__link {
   position: relative;
   display: block;
-  letter-spacing: var(--letter-spacing);
-  padding: var(--gap-sm);
+  letter-spacing: $letter-spacing;
+  padding: $gap-sm;
   text-transform: uppercase;
 }
 
 .navbar__link--active {
-  color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
+  color: $color-primary;
+  font-weight: $font-weight-medium;
 }
 
 .navbar__link::after {
@@ -117,10 +113,10 @@ a {
   position: absolute;
   display: block;
   bottom: 0;
-  left: calc(var(--gap-sm) * -1);
-  right: calc(var(--gap-sm) * -1);
+  left: calc(#{$gap-sm} * -1);
+  right: calc(#{$gap-sm} * -1);
   height: 3px;
-  background-color: var(--color-primary);
+  background-color: $color-primary;
   border-radius: 3px;
   transform: scaleX(0);
   transform-origin: center;
@@ -148,7 +144,7 @@ a {
 
 .hero__description {
   margin-bottom: 56px;
-  color: var(--color-secondary);
+  color: $color-secondary;
 }
 
 .hero__button {
@@ -156,9 +152,9 @@ a {
   align-items: center;
   justify-content: center;
   padding: 0.5em;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  letter-spacing: var(--letter-spacing);
+  background-color: $color-primary;
+  color: $color-white;
+  letter-spacing: $letter-spacing;
   min-width: 225px;
   min-height: 65px;
   text-transform: uppercase;
@@ -172,27 +168,27 @@ a {
 }
 
 .section__title {
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-sm);
+  font-weight: $font-weight-medium;
+  line-height: $line-height-sm;
   margin-bottom: 40px;
 }
 
 .section__description {
-  color: var(--color-secondary);
+  color: $color-secondary;
 }
 
 .about {
-  background-color: var(--color-white);
+  background-color: $color-white;
 }
 
 .process {
-  background-color: var(--color-light);
+  background-color: $color-light;
 }
 
 /* experience */
 .experience {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: $color-primary;
+  color: $color-white;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -200,13 +196,13 @@ a {
 .experience__container {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-lg);
+  gap: $gap-lg;
   justify-content: space-between;
 }
 
 .experience-item {
   display: flex;
-  gap: var(--gap);
+  gap: $gap;
 }
 
 .experience-item__description {
@@ -218,7 +214,7 @@ a {
 
 .experience-item__value {
   font-size: 1.3125rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: $font-weight-medium;
 }
 
 .experience-item__picture {
@@ -231,8 +227,8 @@ a {
 
 .video {
   padding-bottom: 100px;
-  background-color: var(--color-light);
-  margin-top: calc(var(--gap-lg) * -1);
+  background-color: $color-light;
+  margin-top: calc(#{$gap-lg} * -1);
 }
 
 .video__iframe {
@@ -244,15 +240,15 @@ a {
 }
 
 .footer {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: $color-primary;
+  color: $color-white;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
 .footer__title {
   font-size: 1.3125rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: $font-weight-medium;
   margin-bottom: 5px;
 }
 
@@ -271,7 +267,7 @@ a {
 
   .navbar__list {
     justify-content: left;
-    gap: var(--gap);
+    gap: $gap;
   }
 
   .hero {
@@ -293,7 +289,7 @@ a {
 
   .experience__container {
     justify-content: center;
-    gap: var(--gap-md);
+    gap: $gap-md;
     flex-wrap: wrap;
   }
 
@@ -319,7 +315,7 @@ a {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--gap-sm);
+    gap: $gap-sm;
   }
 
   .hero {
@@ -368,7 +364,7 @@ a {
   .navbar__list {
     flex-direction: column;
     align-items: stretch;
-    gap: var(--gap-sm);
+    gap: $gap-sm;
   }
 
   .hero__description {
@@ -384,6 +380,6 @@ a {
   .experience__container {
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-md);
+    gap: $gap-md;
   }
 }
