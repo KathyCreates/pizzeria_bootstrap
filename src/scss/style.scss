@@ -1,2 +1,65 @@
-@use 'common' as *;
-@use 'components' as *;
+@import "../../vendors/bootstrap-5.3.8/scss/bootstrap.scss";
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #ff7f32;
+  --bs-btn-border-color: #ff7f32;
+
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #e96b1f;
+  --bs-btn-hover-border-color: #d8601c;
+
+  --bs-btn-focus-shadow-rgb: 255, 127, 50;
+
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d8601c;
+  --bs-btn-active-border-color: #c95619;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #ff9a57;
+  --bs-btn-disabled-border-color: #ff9a57;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: #fff;
+
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+
+  --bs-btn-focus-shadow-rgb: 255, 255, 255;
+
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+
+  --bs-btn-disabled-color: #ccc;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #ccc;
+
+  --bs-gradient: none;
+}
+
+$overlay-color: rgba(33, 16, 4, 0.577); // чорний з прозорістю 50%
+$header-bg: url("../../assets/images/header_bg.jpg");
+
+.header-section {
+  position: relative;
+  background: $header-bg center/cover no-repeat;
+  color: #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: $overlay-color;
+  }
+
+  >* {
+    position: relative;
+    z-index: 1; // щоб контент був поверх overlay
+  }
+}
